@@ -1,24 +1,24 @@
 name: Deploy to S3
-
+ #.github/workflows/deploy.yml
+ #main ブランチに push（保存）された時にだけ、自動実行されます。
 on:
   push:
     branches:
       - main
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-latest #最新の Linux (Ubuntu) 環境で動きます。GitHubが用意した仮想マシン上で処理されます。
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3 #今のGitHubの中身（index.htmlなど）を、この仮想マシンにダウンロードします。
 
-    - name: Upload to S3
+    - name: Upload to S3 #S3へアップロード（デプロイ）
       uses: jakejarvis/s3-sync-action@v0.5.1
       with:
-        args: --acl public-read --delete
-      env:
-        AWS_S3_BUCKET: my-awesome-jikoshoukai 
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        args: --acl public-read --delete. #誰でもページを見られるように公開設定.--delete S3上に不要なファイルがあれば削除（同期のため）
+      env: #S3アップロード時に使う環境変数
+        AWS_S3_BUCKET: my-awesome-jikoshoukai #アップロード先のS3バケット名
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }} #	GitHub Secrets に登録したアクセスキー（非公開）
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }} #	同じく秘密鍵（非公開）
         AWS_REGION: ap-northeast-1
         SOURCE_DIR: "./"
