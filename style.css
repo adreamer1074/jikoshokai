@@ -1,40 +1,51 @@
+/* ページ全体のスタイル */
 body {
-  font-family: "Helvetica Neue", sans-serif;
-  background-color: #f5f5f5;
+  font-family: "Helvetica", "Arial", sans-serif;
+  background-color: #f9f9f9;
   color: #333;
   margin: 0;
-  padding: 0;
+  padding: 20px;
 }
 
+/* ヘッダー部分 */
 header {
-  background-color: #4CAF50;
+  background-color: #0077cc;
   color: white;
-  padding: 1em;
+  padding: 20px;
   text-align: center;
-}
-
-main {
-  padding: 2em;
-}
-
-section {
-  margin-bottom: 2em;
-}
-
-h2 {
-  color: #4CAF50;
-  border-bottom: 2px solid #4CAF50;
-  padding-bottom: 0.3em;
-}
-
-img {
   border-radius: 8px;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
 }
 
+/* メインコンテンツのセクション */
+main section {
+  background-color: white;
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* セクションの見出し */
+h2 {
+  color: #0077cc;
+}
+
+/* プロフィール画像 */
+img {
+  border-radius: 50%;
+  display: block;
+  margin: 10px auto;
+}
+
+/* リストのスタイル */
+ul {
+  padding-left: 20px;
+}
+
+/* フッター */
 footer {
-  background-color: #eee;
   text-align: center;
-  padding: 1em;
-  font-size: 0.9em;
+  font-size: 14px;
+  margin-top: 30px;
+  color: #555;
 }

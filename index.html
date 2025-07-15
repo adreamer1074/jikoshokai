@@ -2,30 +2,61 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>わたしの自己紹介ページ</title>
+  <title>自己紹介ページ</title>
+  <!-- CSSファイルを読み込み -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- ヘッダー（名前の表示など） -->
   <header>
-    <h1>こんにちは！quangですssss</h1>
+    <h1>Hello World</h1> <!-- 自分の名前に変更してOK -->
+    <p>こんにちは！</p>
   </header>
 
+  <!-- メインコンテンツ -->
   <main>
+
+    <!-- プロフィール画像（必要に応じて差し替え） -->
+    <section>
+      <h2>プロフィール写真</h2>
+      <img src="unnamed.jpg" alt="プロフィール画像" width="200">
+      <!-- profile.jpg は同じフォルダに用意してください -->
+    </section>
+
+    <!-- 自己紹介文 -->
     <section>
       <h2>自己紹介</h2>
-      <p>はじめまして！わたしは〇〇（名前）です。</p>
-      <p>趣味は〇〇と〇〇です。</p>
-      <p>好きな食べ物は〇〇です。</p>
+      <p>
+        私は〇〇大学〇〇学部の学生です。プログラミングやデザインに興味があります。<br>
+        現在、HTMLとCSSを勉強中です！
+      </p>
     </section>
 
+    <!-- 趣味など -->
     <section>
-      <h2>わたしの写真</h2>
-      <img src="https://via.placeholder.com/200" alt="わたしの写真">
+      <h2>趣味・好きなこと</h2>
+      <ul>
+        <li>音楽を聴くこと</li>
+        <li>カフェ巡り</li>
+        <li>簡単なWebアプリづくり</li>
+      </ul>
     </section>
+
+    <!-- 目標や将来の夢 -->
+    <section>
+      <h2>将来の目標</h2>
+      <p>
+        将来は、使いやすくて楽しいWebサービスをつくるエンジニアになりたいです！
+      </p>
+    </section>
+
   </main>
 
+  <!-- フッター（連絡先など） -->
   <footer>
-    <p>&copy; 2025 わたしのページ</p>
+    <p>連絡先：<a href="mailto:taro@example.com">taro@example.com</a></p>
   </footer>
+
 </body>
 </html>
