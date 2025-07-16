@@ -4,20 +4,29 @@ on:
   push:
     branches:
       - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+    # 1. リポジトリのコードをチェックアウト
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    # 2. HTML構文チェック（htmlhint）
+    - name: Run HTMLHint (syntax check)
+      run: |
+        npm install -g htmlhint
+        htmlhint ./index.html
+
+    # 3. S3へアップロード（テスト通過後のみ）
     - name: Upload to S3
       uses: jakejarvis/s3-sync-action@v0.5.1
       with:
         args: --acl public-read --delete
       env:
-        AWS_S3_BUCKET: my-awesome-introduction-page 
+        AWS_S3_BUCKET: my-awesome-introduction-page
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ap-northeast-1
